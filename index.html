@@ -3,27 +3,48 @@
 
 <head>
     <title>乙酸计划</title> <!--浏览器标签显示的文本-->
-    <meta name = "description" content="了解更多关于嵌入式开发工程师孟雅辉的一切！"> <!--为搜索引擎提供信息-->
-    <meta name = "author" content="孟雅辉">
-    <link rel = "stylesheet" href = "css/home.css">
-
+    <meta name="description" content="了解更多关于嵌入式开发工程师孟雅辉的一切！"> <!--为搜索引擎提供信息-->
+    <meta name="author" content="孟雅辉">
+    <link rel="stylesheet" href="css/home.css"> <!--添加样式-->
+    <link rel="icon" href="img/title.png"> <!--设置标签中的图形-->
 </head>
 
 
 <body>
-    <hander role="banner">        <!-- 页眉-->
-        <nav>       <!-- 导航栏-->
-            <ul role = "main">         <!--开始列表，创建无须列表-->
-                <li> <a href = "index.html">主页</a></li>                     <!--<a>锚元素，内容是标签性质的文本-->
-                <li> <a href = "index.html">简历</a></li> 
-                <li> <a href = "index.html">乙酸计划</a></li> 
-            </ul>  
-        </nav>
-    </hander>
+    <div style="background-image: url('img/DJI_20250423101403_0409_D.JPG'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;"> <!-- 100vh = 整个视口高度 -->
+        <p id="zimu">你走过的地方，鲜花盛开</p>
+
+        <div class = "hamburger" id="hamburger">
+            <div class="line"> </div>
+            <div class="line"> </div>
+            <div class="line"> </div>
+        </div>
+        <div id="overlay">
+            <div id="catalogue">
+                <nav> <!-- 导航栏-->
+                    <ul role="main"> <!--开始列表，创建无须列表-->
+                        <li> <a href="biographical_notes.html">简历</a></li> <!--<a>锚元素，内容是标签性质的文本-->
+                        <li> <a href="index.html">文章</a></li>
+                        <li> <a href="index.html">视频</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+
+        
+    </div>
+    
+    <footer> <!-- 页脚-->
+        
+    </footer>
 
 </body>
-
-
-
+<script src="js/function.js"></script>
 
 </html>
