@@ -1,104 +1,211 @@
-#frame_float{
-    width: 200px;
-    height: 340px;
-    background-color: white;
-    border: 1px, solid, #BFBFBF;
-}
-#photo{
-    position:relative;
-    top: 10px;
-    margin:auto;
-    background-color: red;
-    width: 180px;
-    height: 200px;
-}
-#left{
-    position:fixed;
-    top:60px;
-    left:330px;
-    width: 200px;
-    height: 500px;
-}
-#frame{
-    margin-top: 10px;
-    width: 200px;
-    height: 150px;
-    background-color: white;
-    border: 1px, solid, #BFBFBF;
-}
-#right{
-    width: 600px;
-    height: 1000px;
-    background-color: white;
-    border: 1px, solid, #BFBFBF;
-    position: relative;
-    top:60px;
-    left:600px;
-}
-.work{
-    width: 500px;
-    height: 50px;
-    display: flex;
-    /* transition: max-height 0.3s ease-in-out; */
-    transition:height 0.5s ease-in-out;
-}
-.lab{
-     border: 1px, solid, #BFBFBF;
-}
-#work_img{
-    width: 50px;
-    height: 50px;
-    background-image: url("../img/中科恒运.jpg");
-    background-size: 100%, 100%;
-}
-#date{
-    position:relative;
-    top: 0px;
-    left: 100px;
-}
- #popupTrigger{
-    width: 40px;
-    height: 40px;
-    position:relative;
-    top: 5px;
-    left: 120px;
-    cursor: pointer;
-} 
-
-#popup {
-  background-color: white;
-  border: 1px solid #888;
-  z-index: 1000;
-  display: none; /* 默认不显示 */
-  width: 500px;
-  border-top-width:0px;
+#frame_float {
+  width: 200px;
+  height: 340px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
 }
 
-
-.box{
-  width: 500px;
-  height: 50px;
-  border: 1px, solid, #BFBFBF;
+#photo {
+  position: relative;
+  top: 10px;
+  margin: auto;
+  width: 180px;
+  height: 200px;
+  /* border: 1px, solid, #BFBFBF; */
   overflow: hidden;
 }
 
+#left {
+  /* position:fixed;
+    top:60px;
+    left:330px; */
+  width: 200px;
+  height: 500px;
+}
+
+#frame {
+  margin-top: 10px;
+  width: 200px;
+  height: 180px;
+  background-color: white;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+#right {
+  width: 600px;
+  height: 1000px;
+  background-color: #f6f6f6;
+  position: relative;
+  /* top:60px;
+    left:600px; */
+}
+
+.work {
+  width: 500px;
+  height: 50px;
+  display: flex;
+  transition: height 0.5s ease-in-out;
+}
+
+#work_1,
+#work_2 {
+  cursor: pointer;
+}
+
+#work_img {
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/中科恒运.jpg");
+  background-size: 100%, 100%;
+}
+
+#date {
+  position: relative;
+  top: 4px;
+  left: 140px;
+}
+
+#popupTrigger,
+#popupTrigger_1 {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 5px;
+  left: 145px;
+  background-image: url("../img/下拉.png");
+  background-size: 100%, 100%;
+}
+
+#popup {
+  background-color: white;
+  z-index: 1000;
+  display: none;
+  /* 默认不显示 */
+  width: 500px;
+}
+
+
+.box {
+  width: 500px;
+  height: 50px;
+  border: 1px, dashed, #BFBFBF;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: white;
+}
+
 /* 定义高度变化的动画 */
-    @keyframes growHeight {
-      from { height: 50px; } /* 初始状态 */
-      to { height: 100px; }   /* 结束状态 */
-    }
-    /* 应用动画的类 */
-    .expand {
-      animation: growHeight 0.5s ease forwards; /* forwards 保持动画结束状态 */
-    }
+@keyframes growHeight {
+  from {
+    height: 50px;
+  }
+
+  /* 初始状态 */
+  to {
+    height: 125px;
+  }
+
+  /* 结束状态 */
+}
+
+/* 应用动画的类 */
+.expand {
+  animation: growHeight 0.5s ease forwards;
+  /* forwards 保持动画结束状态 */
+}
 
 
 /* 定义高度变化的动画 */
-    @keyframes shrinkHeight  {
-      from { height: 100px; } /* 初始状态 */
-      to { height: 50px; }   /* 结束状态 */
-    }
-    /* 应用动画的类 */
-    .collapse {
-      animation: shrinkHeight 0.5s ease forwards; /* forwards 保持动画结束状态 */
-    }
+@keyframes shrinkHeight {
+  from {
+    height: 125px;
+  }
+
+  /* 初始状态 */
+  to {
+    height: 50px;
+  }
+
+  /* 结束状态 */
+}
+
+/* 应用动画的类 */
+.collapse {
+  animation: shrinkHeight 0.5s ease forwards;
+  /* forwards 保持动画结束状态 */
+}
+
+
+/* 定义高度变化的动画 */
+@keyframes growHeight_1 {
+  from {
+    height: 50px;
+  }
+
+  /* 初始状态 */
+  to {
+    height: 175px;
+  }
+
+  /* 结束状态 */
+}
+
+/* 应用动画的类 */
+.expand_1 {
+  animation: growHeight_1 0.5s ease forwards;
+  /* forwards 保持动画结束状态 */
+}
+
+
+/* 定义高度变化的动画 */
+@keyframes shrinkHeight_1 {
+  from {
+    height: 175px;
+  }
+
+  /* 初始状态 */
+  to {
+    height: 50px;
+  }
+
+  /* 结束状态 */
+}
+
+/* 应用动画的类 */
+.collapse_1 {
+  animation: shrinkHeight_1 0.5s ease forwards;
+  /* forwards 保持动画结束状态 */
+}
+
+#leftBtn,
+#rightBtn {
+  position: absolute;
+  z-index: 9999;
+  overflow: hidden;
+  height: 32px;
+  width: 32px;
+  border-radius: 44px;
+  border: none;
+  background: rgba(0, 0, 0, 0.24);
+  padding: 0px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn_hidden {
+  opacity: 0;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.title{
+  border: 1px, solid, #DBDBDB; 
+  border-radius: 5px; 
+  padding-left: 10px; 
+  padding-right: 10px; 
+  font-weight: 500;
+  margin-top:20px;
+  margin-bottom:20px;
+  display: inline;
+}

@@ -10,71 +10,163 @@
 </head>
 
 
-<body>
-    <div id="left">
-        <div id="frame_float">
-            <div id="photo">
+<body style="background-color: #f6f6f6;">
+    <div style="display: flex; margin: auto; width: 1000px;">
+        <div id="left" style=" position: fixed; top: 50%; transform: translateY(-50%);">
+            <div id="frame_float" style="overflow: hidden;">
+                <div id="photo">
+                    <ul id="slider"
+                        style="display: flex; width: 370px; height: 100%; padding-left: 0%; margin: 0px; list-style: none; gap: 10px; transition: transform 0.5s ease-in-out;">
+                        <li style=" width: 180px; height: 200px;">
+                            <img src="img\1.JPG" style="object-fit: contain; width: 180px; height: 200px;">
+                        </li>
+                        <li style=" width: 180px; height: 200px;">
+                            <img src="img\2.JPG" style="object-fit: contain; width: 180px; height: 200px;">
+                        </li>
+                    </ul>
+                    <button id="leftBtn" style="margin-top: -110px;margin-left: 5px; display: none;">
+                        <img src="img\左箭头.png">
+                    </button>
+                    <button id="rightBtn" style="margin-top: -110px;margin-left: 140px; ">
+                        <img src="img\右箭头.png">
+                    </button>
+                </div>
+                <h3 style="margin-left: 10px;">你好，<br>我叫孟雅辉</h5>
+                    <h5 style="margin-left: 10px; color: #424242;">嵌入式开发工程师，作家</h5>
             </div>
-            <h3>你好，我叫孟雅辉</h5>
-                <h5>嵌入式开发工程师</h5>
+            <div id="frame">
+
+                <div style="margin-bottom: 5px;margin-left: 5px;">
+                    <img src="img/生日.png" height="16" width="16">
+                    <a style="color: #424242;">1996.10</a>
+                </div>
+
+                <div style="margin-bottom: 5px; margin-left: 5px;">
+                    <img src="img/居住地址.png" height="16" width="16">
+                    <a style="color: #424242;">河北省石家庄市<br></a>
+                </div>
+
+                <div style="margin-bottom: 5px; margin-left: 5px;">
+                    <img src="img/毕业院校.png" height="16" width="16">
+                    <a style="color: #424242;">石家庄铁道大学<br></a>
+                </div>
+                <div style="margin-bottom: 5px; margin-left: 5px;">
+                    <img src="img/所学专业.png" height="16" width="16">
+                    <a style="color: #424242;">计算机科学与技术</a>
+                </div>
+
+                <div style="margin-bottom: 5px; margin-left: 5px;">
+                    <img src="img/手机.png" height="16" width="16">
+                    <a style="color: #424242;">15176107355<br></a>
+                </div>
+                <div style="margin-bottom: 5px; margin-left: 5px;">
+                    <img src="img/邮箱.png" height="16" width="16">
+                    <a style="color: #424242;">2621848930@qq.com</a>
+                </div>
+            </div>
         </div>
-        <div id="frame">
-            <img src="img/居住地址.png" height="16" width="16">
-            <a>河北省石家庄市<br></a>
-            <img src="img/居住地址.png" height="16" width="16">
-            <a>15176107355<br></a>
-            <img src="img/居住地址.png" height="16" width="16">
-            <a>2621848930@qq.com</a>
+
+        <div id="right" style="margin-left: 300px;">
+            <div>
+                <div style="margin-top: 30px; margin-bottom: 30px;">
+                    <label class="title">介绍</label>
+                </div>
+                <p style="text-indent: 2em; color: #424242;">我叫孟雅辉，是一名嵌入式开发工程师，现在居住在河北省石家庄市。本科毕业于石家庄铁道大学，所学专业为计算机科学与技术。
+                </p>
+                <p style="text-indent: 2em; color: #424242;">
+                    我原本就对计算机有着浓厚的兴趣，四年的在校学习，让我对计算机知识的构建打下了良好的基础。工作之后，从事嵌入式开发方向，通过五年的项目经历的洗礼，让我对嵌入式开发有了较为深刻的认识。</p>
+                <div style="margin-top: 30px; margin-bottom: 30px;">
+                    <label class="title">技能</label>
+                </div>
+                <label
+                    style="color: #424242; background-color: white; margin: 10px; padding: 5px; border-radius: 10px;">C语言开发</label>
+                <label
+                    style="color: #424242;background-color: white; margin: 10px; padding: 5px; border-radius: 10px;">C++开发</label>
+                <label
+                    style="color: #424242;background-color: white; margin: 10px; padding: 5px; border-radius: 10px;">Qt开发</label>
+                <label
+                    style="color: #424242;background-color: white; margin: 10px; padding: 5px; border-radius: 10px;">LUA开发</label>
+                <label
+                    style="color: #424242;background-color: white; margin: 10px; padding: 5px; border-radius: 10px;">freeRTOS</label>
+                <label
+                    style="color: #424242;background-color: white; margin: 10px; padding: 5px; border-radius: 10px;">linux</label>
+                <div style="margin-top: 30px; margin-bottom: 30px;">
+                    <label class="title">工作经历<br></label>
+                </div>
+                <div class="box" id="animatedBox">
+                    <div class="work" id="work_1">
+                        <div id="work_img" class="lab"></div>
+                        <div style="margin-left: 5px;">
+                            <div id="company" class="lab">中科恒运股份有限公司</div>
+                            <div class="lab" style="margin-top: 5px; font-size: 14px; color: #424242;">Qt开发工程师</div>
+                        </div>
+                        <div id="date" class="lab"
+                            style="font-size: 14px; margin-top: 10px; margin-bottom: 10px; color: #424242;">
+                            2020.06-2020.11</div>
+                        <div id="popupTrigger" style="margin-top:10px"></div>
+                    </div>
+                    <div id="popup">
+                        <p style="text-indent: 2em;color: #424242;">从事Qt开发，从这里开始接触Qt，学习并且掌握了利用Qt对软件进行开发、打包的流程。</p>
+                    </div>
+                </div>
+
+                <div class="box" id="animatedBox_1" style="margin-top: 10px;">
+                    <div class="work" id="work_2">
+                        <div id="work_img" style="background-image: url('img/蓝蜂.jpg');"></div>
+                        <div style="margin-left: 5px;">
+                            <div id="company" style="display: block;">河北蓝蜂物联网信息科技有限公司</div>
+                            <div style="margin-top: 5px; font-size: 14px;color: #424242;">嵌入式开发工程师</div>
+                        </div>
+                        <div id="date" class="lab"
+                            style="font-size: 14px; margin-top: 10px; margin-bottom: 10px; left: 60px;color: #424242;">
+                            2020.11-2025.04
+                        </div>
+                        <div id="popupTrigger_1" style="margin-top:10px; left: 65px;"></div>
+                    </div>
+                    <div id="popup_1">
+                        <p style="text-indent: 2em; margin-bottom: 5px;color: #424242;">
+                            从事C语言嵌入式开发。接触过的芯片有esp32、杰理、移远。独立完成了多个数据采集网关项目，开发了10余种工控协议。</p>
+                        <p style="text-indent: 2em; margin-top: 5px;color: #424242;">
+                            项目环境都是freeRTOS，因此对于该系统有深刻的认识，对于挂载flash、挂载文件系统和挂载数据库等操作都有过相关实践。</p>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; margin-bottom: 30px;">
+                    <label class="title">项目经历</label>
+                </div>
+                <div
+                    style="background-color: white; margin-bottom: 10px; border-radius: 10px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="border-bottom:1px solid #BFBFBF;">
+                        <label style="margin: 10px;">虚拟网络工具</label>
+                    </div>
+                    <div>
+                        <p style="text-indent: 2em;color: #424242;">
+                            Qt开发的windows软件，拥有登录界面和配置界面，主要功能是对plc软件的数据透传。利用http对网关进行参数查询和配置；利用tcp进行数据传送。</p>
+                    </div>
+                </div>
+                <div
+                    style="background-color: white; margin-bottom: 10px; border-radius: 10px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="border-bottom:1px solid #BFBFBF;">
+                        <label style="margin: 10px;">数据采集网关</label>
+                    </div>
+                    <div>
+                        <p style="text-indent: 2em;color: #424242;">
+                            C语言开发的数据采集网关程序，具有对可编程控制器线圈和寄存器的数据读写功能。根据不同的功能分为不同项目，其中有mqtt数据采集网关和低功耗蓝牙数据采集网关。</p>
+                    </div>
+                </div>
+                <div
+                    style="background-color: white; margin-bottom: 10px; border-radius: 10px; padding-top: 10px; padding-bottom: 10px;">
+                    <div style="border-bottom:1px solid #BFBFBF;">
+                        <label style="margin: 10px;">工控协议</label>
+                    </div>
+                    <div>
+                        <p style="text-indent: 2em;color: #424242;">各种工控协议的开发。如modbus、欧姆龙、三菱、西门子、倍福、罗克韦尔、BACnet等。</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div id="right">
-        <div>
-            <h5>介绍</h5>
-            <p>我叫孟雅辉，是一名嵌入式开发工程师，现在居住在河北省石家庄市。本科毕业于石家庄铁道大学，所学专业为计算机科学与技术。</p>
-            <p>我原本就对计算机有着浓厚的兴趣，四年的在校学习，让我对计算机知识的构建打下了良好的基础。工作之后，从事嵌入式开发方向，通过五年的项目经历的洗礼，让我对嵌入式开发有了较为深刻的认识。</p>
-            <h5>技能</h5>
-            <label>Qt开发</label>
-            <label>C语言开发</label>
-            <label>C++开发</label>
-            <label>linux</label>
-            <label>freeRTOS</label>
-            <h5>工作经历</h5>
-            <div class="box" id="animatedBox">
-                <div class="work">
-                    <div id="work_img" class="lab"></div>
-                    <div>
-                        <label id="company" class="lab" style="display: block;">中科恒运股份有限公司</label>
-                        <label class="lab">Qt开发工程师</label>
-                    </div>
-                    <div id="date" class="lab">2020.06-2020.11</div>
-                    <button onclick="triggerAnimation()" id="popupTrigger"></button>
-                </div>
-                <div id = "popup">
-                    <p>入职5个月，主要从事Qt上位机软件的开发，因此具有Qt开发的经验。</p>
-                </div>
-            </div>
-
-            <div class="box" id="animatedBox_1">
-                <div class="work">
-                    <div id="work_img" class="lab"></div>
-                    <div>
-                        <label id="company" class="lab" style="display: block;">河北蓝蜂物联网信息科技有限公司</label>
-                        <label class="lab">嵌入式开发工程师</label>
-                    </div>
-                    <div id="date" class="lab">2020.11-2025.4</div>
-                    <button onclick="triggerAnimation()" id="popupTrigger"></button>
-                </div>
-                <div id = "popup">
-                    <p>入职5个月，主要从事Qt上位机软件的开发，因此具有Qt开发的经验。</p>
-                </div>
-            </div>
-            <h5>技术栈</h5>
-            
-        </div>
-    </div>
-
-    <footer> <!-- 页脚-->
+    <footer style="height: 100px;"> <!-- 页脚-->
 
     </footer>
 

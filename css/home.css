@@ -47,9 +47,9 @@ html, body {
     transition: 0.3s;
 }
 
-.hamburger:hover .line{
+/* .hamburger:hover .line{
     background-color:red;
-}
+} */
 
 #catalogue{
     position: fixed;
@@ -64,9 +64,9 @@ html, body {
     font-size: 50px;
     color: white;
 }
-.item:hover{
+/* .item:hover{
     background-color:red;
-}
+} */
 
 ul {
     list-style-type: none;          /*移除列表前小标志*/

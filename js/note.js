@@ -1,32 +1,129 @@
-// document.getElementById('popupTrigger').addEventListener('click', function() {
-//   document.getElementById('popup').style.display = 'block';
-// });
 
-// document.querySelector('.popup-close').addEventListener('click', function() {
-//   document.getElementById('popup').style.display = 'none';
-// });
+function triggerAnimation() {
+  const box = document.getElementById("animatedBox");
+  var popup = document.getElementById('popup');
+  //下拉图片
+  var msg = document.getElementById('popupTrigger');
+  //边框
+  var border = document.getElementById('work_1');
 
- function triggerAnimation() {
-      const box = document.getElementById("animatedBox");
-      var popup = document.getElementById('popup');
+  // 移除之前的动画类，确保动画可以重复触发
+  box.classList.remove("expand", "collapse");
 
-            // 移除之前的动画类，确保动画可以重复触发
-      box.classList.remove("expand", "collapse");
-      
-      // 强制浏览器重绘，使动画重置生效
-      void box.offsetWidth;
+  // 强制浏览器重绘，使动画重置生效
+  void box.offsetWidth;
 
-      if(popup.style.display == "none" || popup.style.display == ""){
-      
-        // 重新添加动画类
-        box.classList.add("expand");
+  if (popup.style.display == "none" || popup.style.display == "") {
 
-        popup.style.display = "block";
-      }
-      else{
-        popup.style.display = "none";
-        // 重新添加动画类
-        box.classList.add("collapse");
+    // 重新添加动画类
+    box.classList.add("expand");
 
-      }
-    }
+    popup.style.display = "block";
+
+    msg.style.backgroundImage = "url('./img/叉号.png')";
+
+    border.style.borderBottom = "1px dashed #BFBFBF";
+    border.style.borderRadius = "5px";
+  }
+  else {
+    popup.style.display = "none";
+    // 重新添加动画类
+    box.classList.add("collapse");
+    msg.style.backgroundImage = "url('./img/下拉.png')";
+
+  }
+}
+
+
+document.getElementById('work_1').addEventListener('click', function () {
+  this.classList.toggle('active');
+  triggerAnimation();
+});
+
+
+function triggerAnimation_2() {
+  const box = document.getElementById("animatedBox_1");
+
+  var popup = document.getElementById('popup_1');
+  //下拉图片
+  var msg = document.getElementById('popupTrigger_1');
+  //边框
+  var border = document.getElementById('work_2');
+
+  // 移除之前的动画类，确保动画可以重复触发
+  box.classList.remove("expand_1", "collapse_1");
+
+  // 强制浏览器重绘，使动画重置生效
+  void box.offsetWidth;
+
+  if (popup.style.display == "none" || popup.style.display == "") {
+
+    // 重新添加动画类
+    box.classList.add("expand_1");
+
+    popup.style.display = "block";
+
+    msg.style.backgroundImage = "url('./img/叉号.png')";
+
+    border.style.borderBottom = "1px dashed #BFBFBF";
+    border.style.borderRadius = "5px";
+  }
+  else {
+    popup.style.display = "none";
+    // 重新添加动画类
+    box.classList.add("collapse_1");
+    msg.style.backgroundImage = "url('./img/下拉.png')";
+
+  }
+}
+
+
+document.getElementById('work_2').addEventListener('click', function () {
+  this.classList.toggle('active');
+  triggerAnimation_2();
+});
+
+
+const slider = document.getElementById('slider');
+const leftBtn = document.getElementById('leftBtn');
+const rightBtn = document.getElementById('rightBtn');
+
+let currentSlide = 0;
+const totalSlides = 2;
+
+// 向左滑动
+leftBtn.addEventListener('click', () => {
+  if (currentSlide === 0) {
+    // 如果当前是第一项，切换到第二项
+    currentSlide = 1;
+  } else {
+    // 如果当前是第二项，切换回第一项
+    currentSlide = 0;
+  }
+  updateSlider();
+});
+
+// 向右滑动
+rightBtn.addEventListener('click', () => {
+  if (currentSlide === 0) {
+    currentSlide = 1;
+  } else {
+    currentSlide = 0;
+  }
+  updateSlider();
+});
+
+function updateSlider() {
+  // 计算需要移动的距离（每个li宽度为50%）
+  // const translateX = -currentSlide * 50;
+  // slider.style.transform = `translateX(${translateX}%)`;
+  const translateX = -currentSlide * 190;
+  slider.style.transform = `translateX(${translateX}px)`;
+  // 更新按钮状态
+  leftBtn.classList.toggle('btn_hidden', currentSlide === 0);
+  if(currentSlide === 1)
+  {
+      leftBtn.style.display = "block"
+  }
+  rightBtn.classList.toggle('btn_hidden', currentSlide === 1);
+}

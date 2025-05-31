@@ -14,6 +14,3 @@ document.getElementById('hamburger').addEventListener('click', function(){
     show_menu();
 });
 
-document.getElementById('popupTrigger').addEventListener('click', function() {
-    alert("Hello from common.js!");
-});
