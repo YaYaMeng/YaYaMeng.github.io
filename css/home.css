@@ -3,14 +3,14 @@ html, body {
     padding: 0;
     height: 100%; /* 确保 html 和 body 填满视口 */
 }
-#zimu{
+/* #zimu{
     font-size: 50px;
     color: white;
     font-family: 'Courier New', Courier, monospace;
     position:fixed;
     top:550px;
     left:500px;
-}
+} */
 #overlay {
     position:fixed;
     left: 0px;
@@ -28,7 +28,7 @@ html, body {
     width: 60px;
     height: 40px;
 }
-.hamburger{
+/* .hamburger{
     position: fixed;
     top:0;
     left:0;
@@ -45,20 +45,13 @@ html, body {
     background-color: #333;
     margin: 5px 5px;
     transition: 0.3s;
-}
+} */
 
 /* .hamburger:hover .line{
     background-color:red;
 } */
 
-#catalogue{
-    position: fixed;
-    top:0;
-    left:330px;
-    width: 900px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
+
 .item{
     text-align:center;
     font-size: 50px;
@@ -79,6 +72,90 @@ ul {
     align-items: center;                     
 } */
 
+
+
+/*小屏幕手机端*/
+@media (min-width: 0px) and (max-width:768px)
+{
+.hamburger{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+    width: 60px;
+    height:50px;
+    cursor:pointer;
+    background-color: white;
+}   
+
+.line{
+    width:60;
+    height:4px;
+    background-color: #333;
+    margin: 10px 10px;
+    transition: 0.3s;
+}
+#zimu{
+    margin-top: auto;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    text-align:center;
+}
+
+#catalogue{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: auto;
+}
+a{
+    display: block;              /*块元素*/
+    width: 50px;                 /*设置块宽度*/
+    text-decoration: none;      /*去掉下划线*/
+    font-size: 20px;
+    margin:auto;
+    text-align:center;
+    color: white;
+    margin-top: 30px;
+}
+
+}
+
+@media (min-width: 768px)
+{
+.hamburger{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+    width: 40px;
+    height:30px;
+    cursor:pointer;
+    background-color: white;
+}
+
+.line{
+    width:30;
+    height:4px;
+    background-color: #333;
+    margin: 5px 5px;
+    transition: 0.3s;
+}
+
+#zimu{
+    margin-top: auto;
+    padding: 10px;
+    font-size: 50px;
+    color: white;
+    text-align:center;
+}
+#catalogue{
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: auto;
+}
 a{
     display: block;              /*块元素*/
     width: 200px;                 /*设置块宽度*/
@@ -89,3 +166,13 @@ a{
     color: white;
     margin-top: 60px;
 }
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    position: relative;
+}
+
