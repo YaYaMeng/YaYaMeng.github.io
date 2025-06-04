@@ -8,7 +8,7 @@ function triggerAnimation() {
   var border = document.getElementById('work_1');
 
   // 移除之前的动画类，确保动画可以重复触发
-  box.classList.remove("expand", "collapse");
+  //box.classList.remove("expand", "collapse");
 
   // 强制浏览器重绘，使动画重置生效
   void box.offsetWidth;
@@ -16,9 +16,17 @@ function triggerAnimation() {
   if (popup.style.display == "none" || popup.style.display == "") {
 
     // 重新添加动画类
-    box.classList.add("expand");
-
+    //box.classList.add("expand");
     popup.style.display = "block";
+    // 重置高度并应用过渡
+    box.style.height = '50';
+    popup.style.height = 'auto';
+    const contentHeight = 50 + popup.scrollHeight + 32;
+    setTimeout(() => {
+      box.style.height = `${contentHeight}px`;
+    }, 10);
+
+
 
     msg.style.backgroundImage = "url('./img/叉号.png')";
 
@@ -28,7 +36,14 @@ function triggerAnimation() {
   else {
     popup.style.display = "none";
     // 重新添加动画类
-    box.classList.add("collapse");
+    //box.classList.add("collapse");
+
+    // 重置高度并应用过渡
+    const contentHeight1 = '50';
+    setTimeout(() => {
+      box.style.height = `${contentHeight1}px`;
+    }, 10);
+
     msg.style.backgroundImage = "url('./img/下拉.png')";
 
   }
@@ -51,7 +66,7 @@ function triggerAnimation_2() {
   var border = document.getElementById('work_2');
 
   // 移除之前的动画类，确保动画可以重复触发
-  box.classList.remove("expand_1", "collapse_1");
+  //box.classList.remove("expand_1", "collapse_1");
 
   // 强制浏览器重绘，使动画重置生效
   void box.offsetWidth;
@@ -59,9 +74,20 @@ function triggerAnimation_2() {
   if (popup.style.display == "none" || popup.style.display == "") {
 
     // 重新添加动画类
-    box.classList.add("expand_1");
+    //box.classList.add("expand_1");
 
     popup.style.display = "block";
+
+
+    box.style.height = '50';
+    popup.style.height = 'auto';
+    const contentHeight2 = 50 + popup.scrollHeight + 32;
+    setTimeout(() => {
+      box.style.height = `${contentHeight2}px`;
+    }, 10);
+
+
+
 
     msg.style.backgroundImage = "url('./img/叉号.png')";
 
@@ -71,7 +97,14 @@ function triggerAnimation_2() {
   else {
     popup.style.display = "none";
     // 重新添加动画类
-    box.classList.add("collapse_1");
+    //box.classList.add("collapse_1");
+
+        // 重置高度并应用过渡
+    const contentHeight3 = '50';
+    setTimeout(() => {
+      box.style.height = `${contentHeight3}px`;
+    }, 10);
+
     msg.style.backgroundImage = "url('./img/下拉.png')";
 
   }
@@ -121,9 +154,8 @@ function updateSlider() {
   slider.style.transform = `translateX(${translateX}px)`;
   // 更新按钮状态
   leftBtn.classList.toggle('btn_hidden', currentSlide === 0);
-  if(currentSlide === 1)
-  {
-      leftBtn.style.display = "block"
+  if (currentSlide === 1) {
+    leftBtn.style.display = "block"
   }
   rightBtn.classList.toggle('btn_hidden', currentSlide === 1);
 }
