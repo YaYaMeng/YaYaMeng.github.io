@@ -22,26 +22,15 @@ body {
 
 
 
-
-/* #popup {
-  background-color: white;
-  z-index: 1000;
-  display: none;
-  width: 500px;
-} */
-
-
-
-
 /* 定义高度变化的动画 */
 @keyframes growHeight {
   from {
-    height: 50px;
+    height: 0px;
   }
 
   /* 初始状态 */
   to {
-    height: 160px;
+    height: 420px;
   }
 
   /* 结束状态 */
@@ -57,12 +46,12 @@ body {
 /* 定义高度变化的动画 */
 @keyframes shrinkHeight {
   from {
-    height: 125px;
+    height: 420px;
   }
 
   /* 初始状态 */
   to {
-    height: 50px;
+    height: 0px;
   }
 
   /* 结束状态 */
@@ -71,48 +60,6 @@ body {
 /* 应用动画的类 */
 .collapse {
   animation: shrinkHeight 0.5s ease forwards;
-  /* forwards 保持动画结束状态 */
-}
-
-
-/* 定义高度变化的动画 */
-@keyframes growHeight_1 {
-  from {
-    height: 50px;
-  }
-
-  /* 初始状态 */
-  to {
-    height: 175px;
-  }
-
-  /* 结束状态 */
-}
-
-/* 应用动画的类 */
-.expand_1 {
-  animation: growHeight_1 0.5s ease forwards;
-  /* forwards 保持动画结束状态 */
-}
-
-
-/* 定义高度变化的动画 */
-@keyframes shrinkHeight_1 {
-  from {
-    height: 175px;
-  }
-
-  /* 初始状态 */
-  to {
-    height: 50px;
-  }
-
-  /* 结束状态 */
-}
-
-/* 应用动画的类 */
-.collapse_1 {
-  animation: shrinkHeight_1 0.5s ease forwards;
   /* forwards 保持动画结束状态 */
 }
 
@@ -156,120 +103,143 @@ body {
     margin: auto;
     width: 100%;
   }
+
   #left {
-  position:fixed;
+    position: fixed;
     /* top:0; */
-   /* left:330px; */
-   width: 100%; 
-  margin: auto;
-  /* position: fixed; */
-  top:0;
-  left: 0;  
-  /* transform: translateX(-50%); */
-  z-index: 1000;
-}
+    /* left:330px; */
+    width: 100%;
+    margin: auto;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    /* transform: translateX(-50%); */
+    z-index: 1000;
+  }
 
-#frame_float {
-  /* width: 100%; */
-  border-radius: 10px 10px 0 0;
-  background-color: #FFFFFF;
-  display: flex;
-  /* margin-top: 20px; */
-  margin-left: 20px;
-  margin-right: 20px;
-}
-#photo {
-  position: relative;
-  /* top: 10px; */
-  margin: 10px;
-  width: 180px;
-  /* border: 1px, solid, #BFBFBF; */
-  height: 200px;
-  overflow: hidden;
-}
+  #frame_float {
+    /* width: 100%; */
+    border-radius: 10px 10px 0 0;
+    background-color: #FFFFFF;
+    display: flex;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 
-#frame {
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  /* width: 100%; */
-  background-color: white;
-  border-radius: 0 0 10px 10px;
-  background-color: #FFFFFF;
-  display: flex;
-  padding-top: 10px;
-}
+  #photo {
+    position: relative;
+    /* top: 10px; */
+    margin: 10px;
+    width: 180px;
+    /* border: 1px, solid, #BFBFBF; */
+    height: 200px;
+    overflow: hidden;
+  }
 
-#right {
-  width: 100%;
-  /*height: 1000px; */
-  background-color: #f6f6f6;
-  margin-top: 370px;
-  /* position: relative; */
-  /* top:60px;
+  #frame {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* width: 100%; */
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    background-color: #FFFFFF;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    padding-top: 10px;
+    transition: height 0.3s ease-in-out;
+  }
+
+  #right {
+    width: 100%;
+    /*height: 1000px; */
+    background-color: #f6f6f6;
+    margin-top: 270px;
+    /* position: relative; */
+    /* top:60px;
     left:600px; */
-}
-#right_context
-{
-  margin: 20px;
-}
+    transition: margin-top 0.3s ease-in-out;
+  }
 
-.work {
-  /* width: 100%; */
-  height: 50px;
-  display: flex;
-  transition: height 0.5s ease-in-out;
-}
-.date {
-  /* position: relative;
+  #right_context {
+    margin: 20px;
+  }
+
+  .work {
+    /* width: 100%; */
+    height: 50px;
+    display: flex;
+    transition: height 0.5s ease-in-out;
+  }
+
+  .date {
+    /* position: relative;
   top: 4px;
   right: 40px; */
-  margin-top: auto;
-  margin-bottom: auto;
-  font-size: 14px; 
-  color: #424242;
-  margin-left:auto;
-}
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 14px;
+    color: #424242;
+    margin-left: auto;
+  }
 
-#popupTrigger,
-#popupTrigger_1 {
-  width: 20px;
-  height: 20px;
-  /* position: relative;
+  #popupTrigger,
+  #popupTrigger_1 {
+    width: 20px;
+    height: 20px;
+    /* position: relative;
   top: 5px;
   left: 145px; */
-  background-image: url("../img/下拉.png");
-  background-size: 100%, 100%;
-  margin-top:auto;
-  margin-bottom: auto;
-  margin-right:2%;
-  margin-left: 2%;
-}
-.box {
-  width: 100%;
-  height: 50px;
-  border: 1px, dashed, #BFBFBF;
-  overflow: hidden;
-  border-radius: 5px;
-  background-color: white;
-  min-width: 336px; 
-  transition: height 0.5s cubic-bezier(0.33, 1, 0.68, 1);
-}
+    background-image: url("../img/下拉.png");
+    background-size: 100%, 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2%;
+    margin-left: 2%;
+  }
 
-.info
-{
-  margin: auto;
-}
+  .box {
+    width: 100%;
+    height: 50px;
+    border: 1px, dashed, #BFBFBF;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: white;
+    min-width: 336px;
+    transition: height 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  }
 
-.company{
-  font-size: 14px;
-}
+  .info {
+    margin: auto;
+  }
 
-#top
-{
-  height: 20px;
-  background-color: #f6f6f6;
-}
+  .company {
+    font-size: 14px;
+  }
+
+  #top {
+    height: 20px;
+    background-color: #f6f6f6;
+  }
+
+  #details {
+    height: 28px;
+    width: 28px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background-image: url("../img/详情.png");
+    background-size: cover;
+    cursor: pointer;
+  }
 
 }
 
@@ -277,92 +247,111 @@ body {
   #entirety {
     display: flex;
     margin: auto;
-    width: 60%;
+    max-width: 900px;
   }
-
-  
-#left {
-  /* position:fixed;
+  #left {
+    /* position:fixed;
     top:60px;
     left:330px; */
-  width: 200px;
-  height: 500px;
-  position: fixed; 
-  top: 50%; 
-  transform: translateY(-50%);
-}
+    width: 200px;
+    height: 500px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-#frame_float {
-  width: 200px;
-  height: 340px;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-}
-#photo {
-  position: relative;
-  top: 10px;
-  margin: auto;
-  width: 180px;
-  /* border: 1px, solid, #BFBFBF; */
-  height: 200px;
-  overflow: hidden;
-}
+  #frame_float {
+    width: 200px;
+    height: 340px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+  }
 
-#frame {
-  margin-top: 10px;
-  width: 200px;
-  height: 180px;
-  background-color: white;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-}
-#right {
-  /* width: 600px;
-  height: 1000px; */
-  background-color: #f6f6f6;
-  margin-left: 300px;
-  /* position: relative; */
-  /* top:60px;
+  #photo {
+    position: relative;
+    top: 10px;
+    margin: auto;
+    width: 180px;
+    /* border: 1px, solid, #BFBFBF; */
+    height: 200px;
+    overflow: hidden;
+  }
+
+  #frame {
+    margin-top: 10px;
+    width: 200px;
+    height: 180px;
+    background-color: white;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+  }
+
+  #right {
+     width: 600px;
+  /*height: 1000px; */
+    background-color: #f6f6f6;
+    margin-left: 300px;
+    /* position: relative; */
+    /* top:60px;
     left:600px; */
-}
+  }
 
-.work {
-  width: 500px;
-  height: 50px;
-  display: flex;
-  transition: height 0.5s ease-in-out;
-}
+  .work {
+    width: 468px;
+    height: 50px;
+    display: flex;
+    transition: height 0.5s ease-in-out;
+  }
 
-.date {
-  position: relative;
-  top: 4px;
-  left: 140px;
-  font-size: 14px; 
-  margin-top: 10px; 
-  margin-bottom: 10px; 
-  color: #424242;
-}
+  .date {
+    /* position: relative;
+    top: 4px;
+    left: 140px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #424242; */
+        margin-top: auto;
+    margin-bottom: auto;
+    font-size: 14px;
+    color: #424242;
+    margin-left: auto;
+  }
 
-#popupTrigger,
-#popupTrigger_1 {
-  width: 20px;
-  height: 20px;
-  position: relative;
+  #popupTrigger,
+  #popupTrigger_1 {
+    /* width: 20px;
+    height: 20px;
+    position: relative;
+    top: 5px;
+    left: 145px;
+    background-image: url("../img/下拉.png");
+    background-size: 100%, 100%;
+    margin-top: 10px; */
+        width: 20px;
+    height: 20px;
+    /* position: relative;
   top: 5px;
-  left: 145px;
-  background-image: url("../img/下拉.png");
-  background-size: 100%, 100%;
-  margin-top:10px;
-}
+  left: 145px; */
+    background-image: url("../img/下拉.png");
+    background-size: 100%, 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2%;
+    margin-left: 2%;
+  }
 
-.box {
-  width: 500px;
-  height: 50px;
-  border: 1px, dashed, #BFBFBF;
-  overflow: hidden;
-  border-radius: 5px;
-  background-color: white;
-  transition: height 0.5s cubic-bezier(0.33, 1, 0.68, 1);
-}
+  .box {
+    width: 468px;
+    height: 50px;
+    border: 1px, dashed, #BFBFBF;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: white;
+    transition: height 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+    #details {
+      display: none;
+  }
 
 }

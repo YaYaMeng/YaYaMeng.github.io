@@ -99,7 +99,7 @@ function triggerAnimation_2() {
     // 重新添加动画类
     //box.classList.add("collapse_1");
 
-        // 重置高度并应用过渡
+    // 重置高度并应用过渡
     const contentHeight3 = '50';
     setTimeout(() => {
       box.style.height = `${contentHeight3}px`;
@@ -159,3 +159,29 @@ function updateSlider() {
   }
   rightBtn.classList.toggle('btn_hidden', currentSlide === 1);
 }
+
+
+//详情按钮
+document.getElementById('details').addEventListener('click', function(){
+    this.classList.toggle('active');
+    //获取详情界面的高度
+    var frame = document.getElementById("frame");
+    //获取右边界面的样式
+    var right = document.getElementById("right");
+    //获取按钮的样式
+    var btn = document.getElementById("details");
+    //高度
+    var height = frame.style.height;
+    if(height == 0 || height == "0px")        //展开详情
+    {
+      frame.style.height = "84px";
+      right.style.marginTop = "370px"
+      btn.style.backgroundImage = "url('./img/叉号.png')";
+    }
+    else                                    //关闭详情
+    {
+      frame.style.height = 0;
+      right.style.marginTop = "270px"
+      btn.style.backgroundImage = "url('./img/详情.png')";
+    }
+});
