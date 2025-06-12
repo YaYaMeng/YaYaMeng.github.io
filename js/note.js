@@ -174,7 +174,7 @@ document.getElementById('details').addEventListener('click', function(){
     var height = frame.style.height;
     if(height == 0 || height == "0px")        //展开详情
     {
-      frame.style.height = "84px";
+      frame.style.height = "90px";
       right.style.marginTop = "370px"
       btn.style.backgroundImage = "url('./img/叉号.png')";
     }
